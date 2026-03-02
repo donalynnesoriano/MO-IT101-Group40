@@ -17,7 +17,7 @@ public class payrollProcessing {
 
         System.out.println("Enter Cutoff 1 Hours: ");
         double cutoff1 = sc.nextDouble();
-
+        
         System.out.println("Enter Cutoff 2 Hours: ");
         double cutoff2 = sc.nextDouble();
 
