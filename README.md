@@ -7,7 +7,7 @@ Project documentation and planning can be found here:
 
 ---
 
-## 🚀 How to Run
+## How to Run
  Run `MotorPHPayrollSystem.java`.
  Login using:
    - Username: `employee` or `payroll_staff`
