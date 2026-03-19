@@ -470,7 +470,6 @@ public class MotorPHPayrollSystem {
 
     // =========================================================
     // Part 7 – Government Deductions
-    // Sample placeholder formulas only
     // =========================================================
     static double computeSSS(double gross) {
         return gross * 0.05;
