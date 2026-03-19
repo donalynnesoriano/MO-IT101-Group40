@@ -152,7 +152,7 @@ public class MotorPHPayrollSystem {
         Map<String, String[]> employeeMap = new TreeMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(EMPLOYEE_FILE))) {
-            String line = br.readLine(); // skip header
+            String line = br.readLine(); 
             if (line == null) return employeeMap;
 
             while ((line = br.readLine()) != null) {
@@ -182,7 +182,7 @@ public class MotorPHPayrollSystem {
         List<String[]> rows = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(ATTENDANCE_FILE))) {
-            String line = br.readLine(); // skip header
+            String line = br.readLine(); 
             if (line == null) return rows;
 
             while ((line = br.readLine()) != null) {
@@ -302,15 +302,15 @@ public class MotorPHPayrollSystem {
             int startMinutes = toMinutes(timeIn);
             int endMinutes = toMinutes(timeOut);
 
-            int workStart = 8 * 60;   // 8:00 AM
-            int workEnd = 17 * 60;    // 5:00 PM
+            int workStart = 8 * 60;  
+            int workEnd = 17 * 60;    
 
-            // Ignore extra hours before 8:00 AM
+        
             if (startMinutes < workStart) {
                 startMinutes = workStart;
             }
 
-            // Ignore extra hours after 5:00 PM
+          
             if (endMinutes > workEnd) {
                 endMinutes = workEnd;
             }
@@ -319,14 +319,14 @@ public class MotorPHPayrollSystem {
                 return 0.0;
             }
 
-            // 8:05 AM to 5:00 PM = 8.0 hours
+        
             if (startMinutes >= 480 && startMinutes <= 485 && endMinutes == 1020) {
                 return 8.0;
             }
 
             int totalMinutes = endMinutes - startMinutes;
 
-            // Deduct 1-hour break to match the given examples
+   
             totalMinutes -= 60;
 
             if (totalMinutes < 0) {
@@ -347,9 +347,7 @@ public class MotorPHPayrollSystem {
         return hour * 60 + minute;
     }
 
-    // =========================================================
-    // Part 6 – Display Employee Info
-    // =========================================================
+    
     static void displayEmployeeInfo(String empNo, Map<String, String[]> employeeMap,
                                     Map<String, List<String[]>> attendanceByEmp) {
 
