@@ -434,7 +434,9 @@ public class MotorPHPayrollSystem {
 
             // Monthly gross first before deductions
             double monthlyGross = gross1 + gross2;
-
+// =========================================================
+    // Part 7 – Government Deductions
+    // =========================================================
             double sss = computeSSS(monthlyGross);
             double philHealth = computePhilHealth(monthlyGross);
             double pagIbig = computePagIbig(monthlyGross);
@@ -466,9 +468,6 @@ public class MotorPHPayrollSystem {
         }
     }
 
-    // =========================================================
-    // Part 7 – Government Deductions
-    // =========================================================
     static double computeSSS(double gross) {
         return gross * 0.05;
     }
